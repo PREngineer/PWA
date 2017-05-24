@@ -2,16 +2,11 @@
     "dir": "ltr",
     "lang": "en",
     "name": "My App",
-    "scope": "/PWA/",
     "display": "standalone",
     "start_url": "./index.html",
     "short_name": "My App",
-    "theme_color": "transparent",
     "description": "A Progressive Web Application",
     "orientation": "any",
-    "background_color": "transparent",
-    "related_applications": [],
-    "prefer_related_applications": false,
     "icons": [
         {
             "src": "./images/windows10/LockScreenLogo.scale-200.png.png",
