@@ -41,9 +41,9 @@
 	
 	<meta name="twitter:creator" content=@PianistaPR>
 	
-	<!-- Service Worker Files -->
+	<!-- Service Worker Files 
 	<script src="sw.js"></script>
-	<script src="sw-register.js"></script>
+	<script src="sw-register.js"></script>-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
