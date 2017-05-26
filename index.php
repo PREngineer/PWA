@@ -11,7 +11,7 @@
 
     <title>My App</title>
 		
-	<link rel="manifest" href="manifest.json">
+	<!--<link rel="manifest" href="manifest.json">-->
 	<link rel="icon" sizes="192x192" href="img/Fatty.png">
 	<link rel="apple-touch-icon" href="img/Fatty.png">
 	
