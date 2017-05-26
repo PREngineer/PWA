@@ -6,7 +6,8 @@ var cacheName = "melt-pwa";
 
 // Establish which files to cache locally
 var filesToCache = [
-  "",
+  ".",
+  "/",
   "index.php",
   "manifest.json",
   "offline.html",
@@ -46,74 +47,45 @@ var filesToCache = [
      6. JavaScript
      7. Templates
 */
-self.addEventListener("install", 
-
-  function(event)
-  {
-    console.log("[ServiceWorker] Installing Service Worker");
+self.addEventListener("install", function(event){
+  console.log("[ServiceWorker] Installing Service Worker");
+  /* 
+     Promise to determine the length and success of the install.
+     If it is rejected, the installation is assumed as failed and the Service Worker
+     will be abandoned.
+  */
+  /* 
+   Attempt to open the Cache specified on top.
+   If it is not found, rejects the promise.
+  */
+  event.waitUntil(caches.open(cacheName).then(function(cache){
+    console.log("[ServiceWorker] Caching App Shell");
     /* 
-	   Promise to determine the length and success of the install.
-	   If it is rejected, the installation is assumed as failed and the Service Worker
-	   will be abandoned.
-	*/
-    event.waitUntil(
-      /* 
-	     Attempt to open the Cache specified on top.
-	     If it is not found, rejects the promise.
-	  */
-      caches.open(cacheName).then(
-    
-        function(cache)
-        {
-          console.log("[ServiceWorker] Caching App Shell");
-		  /* 
-		     Attempt to retrieve all of the files needed.
-		     If it fails to retrieve any, it will reject the promise.
-		  */
-          return cache.addAll(filesToCache);
-        }
-      )
-    );
-  }
-);
+       Attempt to retrieve all of the files needed.
+       If it fails to retrieve any, it will reject the promise.
+    */
+    return cache.addAll(filesToCache);}));});
 
 /* 
    Listen for the activation event
    - This occurs once the Service Worker is installed and there are no old ones running.
    - This is a good moment to:
      1. Handle IndexedDB schema migrations
-	 2. Delete unused caches
+     2. Delete unused caches
 */
-self.addEventListener("activate", 
-
-  function(event)
-  {
-    console.log("[ServiceWorker] Activating Service Worker");
-	
-    event.waitUntil(
-
-	  caches.keys().then(
-	  
-        function(keyList)
-        {
-          return Promise.all(
-		  
-            keyList.map(
-			
-              function(key)
-              {
-				// If the current caches no longer exist, delete them.
-                if (key !== cacheName && key !== dataCacheName)
-                {
-                  console.log("[ServiceWorker] Removing old cache(s)", key);
-                  return caches.delete(key);
-                }
-              }
-            )
-          );
-        }
-      )
-    );
+self.addEventListener("activate", function(event){
+  console.log("[ServiceWorker] Activating Service Worker");
+    
+  event.waitUntil(caches.keys().then(function(keyList){
+    return Promise.all(keyList.map(function(key){
+      // If the current caches no longer exist, delete them.
+      if (key !== cacheName && key !== dataCacheName)
+      {
+        console.log("[ServiceWorker] Removing old cache(s)", key);
+        return caches.delete(key);
+      }
+    }));
+  }));
   
     /*
     * Fixes a corner case in which the app wasn't returning the latest data.
@@ -126,8 +98,7 @@ self.addEventListener("activate",
     * you activate the service worker faster.
     */
     return self.clients.claim();
-  }
-);
+});
 
 /* 
    Listen for a fetch request
@@ -135,8 +106,8 @@ self.addEventListener("activate",
    - It is useful to retrieve non-essential content like avatars.
    - If a request is not found in the cache or needs an update:
      1. Get it from the network (server)
-	 2. Save it in the cache
-	 3. Show it in the page
+     2. Save it in the cache
+     3. Show it in the page
    - Remember to delete unused stuff as it will increase the usage in the user's device.   
 */
 
@@ -154,13 +125,13 @@ self.addEventListener("activate",
      * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
     */
 /*    event.respondWith(
-	  
+      
       caches.open(dataCacheName).then(
-		  
+          
         function(cache)
         {
           return fetch(event.request).then(
-		 
+         
             function(response)
             {
               cache.put(event.request.url, response.clone());
@@ -176,9 +147,9 @@ self.addEventListener("activate",
     * https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
     */
 /*    event.respondWith(
-	
+    
       caches.match(event.request).then(
-	
+    
         function(response)
         {
           return response || fetch(event.request);
@@ -193,24 +164,12 @@ self.addEventListener("activate",
    - Attempt to fetch from the Network
    - If not successful, server the offline page
 */
-self.addEventListener('fetch', 
-  function(event)
-  {
-    event.respondWith(
-      fetch(event.request).catch(
-        function(error)
-        {
-          console.error( '[ServiceWorker] Network request Failed. Serving offline page ' + error );
-          
-          return caches.open(cacheName).then(
-
-            function(cache)
-            {
-              return cache.match('offline.html');
-            }
-    	  );
-        }
-      )
-    );
-  }
-);
+self.addEventListener('fetch',function(event){
+  event.respondWith(fetch(event.request).catch(function(error){
+    console.error( '[ServiceWorker] Network request Failed. Serving offline page ' + error );
+        
+    return caches.open(cacheName).then(function(cache){
+      return cache.match('offline.html');
+    });
+  }));
+});
