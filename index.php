@@ -11,7 +11,11 @@
 
     <title>My App</title>
 		
-	<!--<link rel="manifest" href="manifest.json">-->
+	<link rel="manifest" href="manifest.json">
+	<!-- Service Worker Files -->
+	<script src="sw.js"></script>
+	<script src="sw-register.js"></script>
+	
 	<link rel="icon" sizes="192x192" href="img/Fatty.png">
 	<link rel="apple-touch-icon" href="img/Fatty.png">
 	
@@ -41,10 +45,6 @@
 	
 	<meta name="twitter:creator" content=@PianistaPR>
 	
-	<!-- Service Worker Files 
-	<script src="sw.js"></script>
-	<script src="sw-register.js"></script>-->
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
