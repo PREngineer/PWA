@@ -61,8 +61,14 @@
 	<br>
 	This is the index page of the application.
 	<br>
-	<a href="offline.html">Offline Page</a>
+	<button onclick="goCNN()">Take me to CNN.com</button>
 </div>
+
+<script>
+function goCNN() {
+    location.href = "http://www.cnn.com";
+}
+</script>
 
 </body>
 
