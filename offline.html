@@ -3,7 +3,7 @@
 
 <?php
 
-include 'head.html';
+include 'includes/head.html';
 
 ?>
 
