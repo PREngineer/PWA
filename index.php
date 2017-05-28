@@ -14,14 +14,8 @@ include 'head.html';
 		<br>
 		This is the index page of the application.
 		<br>
-		<button onclick="goCNN()">Take me to CNN.com</button>
+		<button onclick="goOffline()">Take me to the offline page.</button>
 	</div>
-
-<script>
-function goCNN(){
-    location.href = "http://www.cnn.com";
-}
-</script>
 
 </body>
 
