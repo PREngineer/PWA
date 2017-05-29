@@ -18,21 +18,13 @@ function goOffline()
 
 function load()
 {
-	if(areWeOnline())
+	if( areWeOnline() )
 	{
-		var show = document.getElementById("home");
-		show.style.display = 'block';
-		
-		var hide = document.getElementById("offline");
-		hide.style.display = 'none';
+		goOnline();
 	}
 	else
 	{
-		var show = document.getElementById("offline");
-		show.style.display = 'block';
-		
-		var hide = document.getElementById("home");
-		hide.style.display = 'none';
+		goOnline();
 	}
 }
 
