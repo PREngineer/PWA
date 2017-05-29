@@ -41,5 +41,5 @@ function showPage(id)
 		btns[i].style.color = 'black';
 	}
 	
-	btn.style.color = 'blue';
+	btn.style.color = 'LightSkyBlue';
 }
