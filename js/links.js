@@ -2,20 +2,20 @@ function goHome()
 {
     //location.href = "#home";
 	
-	$("#offline").hide();
-	$("#home").show();
+	var hide = document.getElementById("offline");
+	hide.style.display = 'none';
+	
+	var hide = document.getElementById("home");
+	hide.style.display = 'block';
 }
 
 function goOffline()
 {
     //location.href = "#offline";
 	
-	$("#home").hide();
-	$("#offline").show();
-}
-
-function load()
-{
-	$("#home").show();
-	$("#offline").hide();
+	var hide = document.getElementById("home");
+	hide.style.display = 'none';
+	
+	var hide = document.getElementById("offline");
+	hide.style.display = 'block';
 }
