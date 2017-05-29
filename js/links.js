@@ -26,6 +26,14 @@ function load()
 		var hide = document.getElementById("offline");
 		hide.style.display = 'block';
 	}
+	else
+	{
+		var hide = document.getElementById("offline");
+		hide.style.display = 'none';
+		
+		var hide = document.getElementById("home");
+		hide.style.display = 'block';
+	}
 }
 
 function getAnchor()
