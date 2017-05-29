@@ -1,6 +1,20 @@
 function load()
 {
 	//areWeOnline();
+	checkconnection();
+}
+
+function checkconnection()
+{
+	var status = navigator.onLine;
+	if (status)
+	{
+		goHome();
+	}
+	else
+	{
+		goOffline();
+	}
 }
 
 function areWeOnline()

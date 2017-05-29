@@ -32,25 +32,6 @@ include 'includes/footer.html';
 
 ?>
 
-<script type="text/javascript">
-function checkconnection()
-{
-	var status = navigator.onLine;
-	if (status)
-	{
-		alert("online");
-	}
-	else
-	{
-		alert("offline");
-	}
-}
-</script>
-
-<div>
-<input type="button" value="Check Connection" onclick="checkconnection()" />
-</div>
-
 </body>
 
 </html>
