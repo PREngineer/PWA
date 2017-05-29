@@ -38,21 +38,21 @@ function getAnchor()
 
 function areWeOnline()
 {
-    var xhr = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
 	
     var file = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
     var randomNum = Math.round(Math.random() * 10000);
  
-    xhr.open('HEAD', file + "?rand=" + randomNum, true);
-    xhr.send();
+    request.open('HEAD', file + "?rand=" + randomNum, true);
+    request.send();
      
-    xhr.addEventListener("readystatechange", processRequest, false);
+    request.addEventListener("readystatechange", processRequest, false);
  
     function processRequest(e)
 	{
-      if (xhr.readyState == 4)
+      if (request.readyState == 4)
 	  {
-        if (xhr.status >= 200 && xhr.status < 304)
+        if (request.status >= 200 && request.status < 304)
 		{
           return true;
         }

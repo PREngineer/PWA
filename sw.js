@@ -13,7 +13,6 @@ var filesToCache = [
   "index.php",
   "manifest.json",
   "offline.html",
-  "home.html",
   "sw.js",
   "sw-reg.js",
   "includes/head.html",
