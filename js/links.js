@@ -23,8 +23,6 @@ function showPage(id)
 	
 	var all = document.getElementsByClassName('hideable');
 	
-	alert(all.length);
-	
 	for(i = 0; i < all.length; i++)
 	{
 		all[i].style.display = 'none';
