@@ -12,44 +12,25 @@ function load()
 
 function areWeOnline()
 {
-	var answer;
-    var request = new XMLHttpRequest();
+	var xhr = new XMLHttpRequest();
+	var file = "https://www.kirupa.com/blank.png";
+	var randomNum = Math.round(Math.random() * 10000);
 	
-    var file = "https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg";
-     
-    request.open('HEAD', file, true);
-    request.send();
-     
-    request.addEventListener("readystatechange", processRequest, true);
- 
-    function processRequest(e)
-	{
-      if(request.readyState == 4)
-	  {
-        if(request.status >= 200 && request.status < 304)
-		{
-          answer = true;
-		  alert("We have Internet access!");
-        }
-		else
-		{
-          answer = false;
-		  alert("We don't have Internet access!");
-        }
-      }
-	  else
-	  {
-		alert('Weird readyStateChange!');
+	xhr.open('HEAD', file + "?rand=" + randomNum, true);
+	xhr.send();
+	
+	xhr.addEventListener("readystatechange", processRequest, false);
+	
+	function processRequest(e) {
+	  if (xhr.readyState == 4) {
+		if (xhr.status >= 200 && xhr.status < 304) {
+		  alert("connection exists!");
+		  return true;
+		} else {
+		  alert("connection doesn't exist!");
+		  return false;
+		}
 	  }
-    }
-	
-	if(answer)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
 	}
 }
 
