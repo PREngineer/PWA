@@ -13,26 +13,14 @@ var filesToCache = [
   "index.php",
   "manifest.json",
   "offline.html",
+  "home.html",
   "sw.js",
   "sw-reg.js",
+  "includes/head.html",
   "img/Logo.png",
-  "images/android/android-launchericon-36-36.png",
-  "images/android/android-launchericon-72-72.png",
-  "images/android/android-launchericon-96-96.png",
-  "images/android/android-launchericon-144-144.png",
-  "images/android/android-launchericon-192-192.png",
-  "images/ios/ios-appicon-76-76.png",
-  "images/ios/ios-appicon-120-120.png",
-  "images/ios/ios-appicon-152-152.png",
-  "images/ios/ios-appicon-180-180.png",
-  "images/ios/ios-appicon-1024-1024.png",
-  "images/windows10/LockScreenLogo.scale-200.png",
-  "images/windows10/SplashScreen.scale-200.png",
-  "images/windows10/Square44x44Logo.scale-200.png",
-  "images/windows10/Square44x44Logo.targetsize-24_altform-unplated.png",
-  "images/windows10/Square150x150Logo.scale-200.png",
-  "images/windows10/StoreLogo.png",
-  "images/windows10/Wide310x150Logo.scale-200.png"
+  "img/TLogo.png",
+  "img/Offline.png",
+  "js/links.js"
 ];
 
 /* Install stage 
