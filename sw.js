@@ -11,6 +11,8 @@ var filesToCache = [
   "/",
   ".",
   "manifest.json",
+  "sw.js",
+  "sw-reg.js",
   "index.php",
   "content/home.html",
   "content/offline.html",
@@ -36,9 +38,7 @@ var filesToCache = [
   "includes/NavBar.html",
   "js/bootstrap.js",
   "js/jquery.min.js",
-  "js/links.js",
-  "js/sw.js",
-  "js/sw-reg.js"
+  "js/links.js"
 ];
 
 /* Install stage 
