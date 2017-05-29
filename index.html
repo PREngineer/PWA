@@ -9,10 +9,14 @@
 <body onload="load()">
 
 <!-- Include the HOME Page -->
-<link rel="import" href="home.html">
+<div w3-include-html="home.html"></div> 
 
 <!-- Include the Offline Page -->
-<link rel="import" href="offline.html">
+<div w3-include-html="offline.html"></div> 
+
+<script>
+w3.includeHTML();
+</script>
 
 </body>
 
