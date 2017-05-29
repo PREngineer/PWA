@@ -1,17 +1,6 @@
 function load()
 {
-	var answer = areWeOnline();
-	
-	alert(answer);
-	
-	if( answer )
-	{
-		goHome();
-	}
-	else
-	{
-		goOffline();
-	}
+	areWeOnline();
 }
 
 function areWeOnline()
@@ -25,14 +14,19 @@ function areWeOnline()
 	
 	xhr.addEventListener("readystatechange", processRequest, false);
 	
-	function processRequest(e) {
-	  if (xhr.readyState == 4) {
-		if (xhr.status >= 200 && xhr.status < 304) {
+	function processRequest(e)
+	{
+	  if (xhr.readyState == 4)
+	  {
+		if (xhr.status >= 200 && xhr.status < 304)
+		{
 		  //alert("connection exists!");
-		  return true;
-		} else {
+		  goHome();
+		}
+		else
+		{
 		  //alert("connection doesn't exist!");
-		  return false;
+		  goOffline();
 		}
 	  }
 	}
