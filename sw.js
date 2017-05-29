@@ -40,7 +40,7 @@ var filesToCache = [
 	- Sets up the offline page in the cache
 */
 self.addEventListener('install', function(event) {
-  var offlinePage = new Request('offline.html');
+  var offlinePage = new Request('index.php');
   event.waitUntil(
   fetch(offlinePage).then(function(response) {
     return caches.open(cacheName).then(function(cache) {
@@ -57,7 +57,7 @@ self.addEventListener('fetch', function(event) {
     fetch(event.request).catch(function(error) {
         console.error( '[ServiceWorker] Network request Failed. Serving offline page ' + error );
         return caches.open(cacheName).then(function(cache) {
-          return cache.match('offline.html');
+          return cache.match('index.php#offline');
       });
     }));
 });
