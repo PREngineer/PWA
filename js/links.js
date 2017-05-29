@@ -24,7 +24,7 @@ function load()
 	}
 	else
 	{
-		goOnline();
+		goOffline();
 	}
 }
 
