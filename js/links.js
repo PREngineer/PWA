@@ -22,11 +22,11 @@ function showPage(id)
 	// Show only the selected page, hide all others
 	var target = document.getElementById(id);
 	
-	var all = document.getElementsByClassName('hideable');
+	var allPages = document.getElementsByClassName('hideable');
 	
-	for(i = 0; i < all.length; i++)
+	for(i = 0; i < allPages.length; i++)
 	{
-		all[i].style.display = 'none';
+		allPages[i].style.display = 'none';
 	}
 	
 	target.style.display = 'block';
