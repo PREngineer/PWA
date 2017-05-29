@@ -40,7 +40,7 @@ function areWeOnline()
 {
     var request = new XMLHttpRequest();
 	
-    var file = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+    var file = "https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg";
     var randomNum = Math.round(Math.random() * 10000);
  
     request.open('HEAD', file + "?rand=" + randomNum, true);
@@ -50,9 +50,9 @@ function areWeOnline()
  
     function processRequest(e)
 	{
-      if (request.readyState == 4)
+      if(request.readyState == 4)
 	  {
-        if (request.status >= 200 && request.status < 304)
+        if(request.status >= 200 && request.status < 304)
 		{
           return true;
         }
