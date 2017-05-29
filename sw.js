@@ -8,7 +8,6 @@ var cacheName = "melt-pwa";
 
 // Defines which files to cache locally
 var filesToCache = [
-  "/",
   ".",
   "manifest.json",
   "sw.js",
