@@ -9,28 +9,26 @@ function checkconnection()
 
 	if (status)
 	{
-		goHome();
+		showPage('home');
 	}
 	else
 	{
-		goOffline();
+		showPage("offline");
 	}
 }
 
-function goHome()
+function showPage(id)
 {
-	var hide = document.getElementById("offline");
-	hide.style.display = 'none';
+	var target = document.getElementById(id);
 	
-	var show = document.getElementById("home");
-	show.style.display = 'block';
-}
-
-function goOffline()
-{
-	var hide = document.getElementById("home");
-	hide.style.display = 'none';
+	var all = document.getElementsByClassName('hideable');
 	
-	var show = document.getElementById("offline");
-	show.style.display = 'block';
+	alert(all.length);
+	
+	for(i = 0; i < all.length; i++)
+	{
+		all[i].style.display = 'none';
+	}
+	
+	target.style.display = 'block';
 }
