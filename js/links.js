@@ -18,7 +18,9 @@ function goOffline()
 
 function load()
 {
-	if( areWeOnline() )
+	alert(areWeOnline());
+	
+	if( answer )
 	{
 		goOnline();
 	}
