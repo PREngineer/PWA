@@ -8,26 +8,16 @@ var cacheName = "melt-pwa";
 
 // Defines which files to cache locally
 var filesToCache = [
+  "/",
   ".",
   "manifest.json",
   "index.php",
-  "content/offline.html",
   "content/home.html",
-  "includes/head.html",
-  "includes/footer.html",
-  "includes/NavBar.html",
-  "img/Logo.png",
-  "img/TLogo.png",
-  "img/Offline.png",
+  "content/offline.html",
   "css/animation.css",
   "css/bootstrap.css",
   "css/bootstrap-theme.css",
   "css/fontello.css",
-  "js/sw.js",
-  "js/sw-reg.js",
-  "js/bootstrap.js",
-  "js/jquery.min.js",
-  "js/links.js",
   "fonts/fontello.eot",
   "fonts/fontello.svg",
   "fonts/fontello.ttf",
@@ -37,7 +27,18 @@ var filesToCache = [
   "fonts/glyphicons-halflings-regular.svg",
   "fonts/glyphicons-halflings-regular.ttf",
   "fonts/glyphicons-halflings-regular.woff",
-  "fonts/glyphicons-halflings-regular.woff2"
+  "fonts/glyphicons-halflings-regular.woff2",
+  "img/Logo.png",
+  "img/TLogo.png",
+  "img/Offline.png",
+  "includes/head.html",
+  "includes/footer.html",
+  "includes/NavBar.html",
+  "js/bootstrap.js",
+  "js/jquery.min.js",
+  "js/links.js",
+  "js/sw.js",
+  "js/sw-reg.js"
 ];
 
 /* Install stage 
@@ -45,7 +46,7 @@ var filesToCache = [
 	- Sets up the offline page in the cache
 */
 self.addEventListener('install', function(event) {
-  var offlinePage = new Request('index.php');
+  var offlinePage = new Request('offline.html');
   event.waitUntil(
   fetch(offlinePage).then(function(response) {
     return caches.open(cacheName).then(function(cache) {
@@ -62,7 +63,7 @@ self.addEventListener('fetch', function(event) {
     fetch(event.request).catch(function(error) {
         console.error( '[ServiceWorker] Network request Failed. Serving offline page ' + error );
         return caches.open(cacheName).then(function(cache) {
-          return cache.match('index.php');
+          return cache.match('offline.html');
       });
     }));
 });
