@@ -1,6 +1,10 @@
+var answer = false;
+
 function load()
 {
-	if( areWeOnline() )
+	alert(answer);
+	
+	if( answer )
 	{
 		goHome();
 	}
@@ -28,12 +32,12 @@ function areWeOnline()
 	  {
         if(request.status >= 200 && request.status < 304)
 		{
-          var answer = true;
+          answer = true;
 		  alert("We have Internet access!");
         }
 		else
 		{
-          var answer = false;
+          answer = false;
 		  alert("We don't have Internet access!");
         }
       }
