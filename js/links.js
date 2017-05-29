@@ -13,7 +13,7 @@ function checkconnection()
 	}
 	else
 	{
-		showPage("offline");
+		showPage('offline');
 	}
 }
 
