@@ -5,8 +5,19 @@ function load()
 
 function areWeOnline()
 {
+	$.ajax({
+	url: 'ajax/test.html',
+	success: function(data) {
+	alert('Connection.');
+	},
+	error: function(data) {
+	alert('No Connection.');
+	}
+	});
+}
+/*{
 	var xhr = new XMLHttpRequest();
-	var file = "https://www.kirupa.com/blank.png";
+	var file = "https://www.google.com";
 	var randomNum = Math.round(Math.random() * 10000);
 	
 	xhr.open('HEAD', file + "?rand=" + randomNum, true);
@@ -30,7 +41,7 @@ function areWeOnline()
 		}
 	  }
 	}
-}
+}*/
 
 function goHome()
 {
