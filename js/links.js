@@ -33,9 +33,10 @@ function showPage(id)
 	
 	// Make the selected page button be blue, all others black
 	var btns = document.getElementsByClassName('buttons');
-	var btn = document.getElementById(id + '-button');
+	var btnName = id + '-button';
+	var btn = document.getElementById(btnName);
 	
-	for(i = 0; i < all.length; i++)
+	for(i = 0; i < btns.length; i++)
 	{
 		btns[i].style.color = 'black';
 	}
