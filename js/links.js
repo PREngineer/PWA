@@ -1,5 +1,3 @@
-var answer = false;
-
 function load()
 {
 	if( areWeOnline() )
@@ -14,11 +12,12 @@ function load()
 
 function areWeOnline()
 {
+	var answer;
     var request = new XMLHttpRequest();
 	
     var file = "https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg";
      
-    request.open('HEAD', file + "?rand=3000", true);
+    request.open('HEAD', file, true);
     request.send();
      
     request.addEventListener("readystatechange", processRequest, false);
