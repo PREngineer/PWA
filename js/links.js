@@ -20,7 +20,7 @@ function areWeOnline()
     request.open('HEAD', file, true);
     request.send();
      
-    request.addEventListener("readystatechange", processRequest, false);
+    request.addEventListener("readystatechange", processRequest, true);
  
     function processRequest(e)
 	{
@@ -39,7 +39,7 @@ function areWeOnline()
       }
 	  else
 	  {
-		alert('Weird readystatechange!');
+		alert('Weird readyStateChange!');
 	  }
     }
 	
