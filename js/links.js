@@ -1,9 +1,9 @@
 function load()
 {
-	areWeOnline();
+	//areWeOnline();
 }
 
-/*function areWeOnline()
+function areWeOnline()
 {
 	var xhr = new XMLHttpRequest();
 	var file = "https://www.google.com";
@@ -30,7 +30,7 @@ function load()
 		}
 	  }
 	}
-}*/
+}
 
 function goHome()
 {
