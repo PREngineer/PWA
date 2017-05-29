@@ -28,10 +28,10 @@ function areWeOnline()
 	function processRequest(e) {
 	  if (xhr.readyState == 4) {
 		if (xhr.status >= 200 && xhr.status < 304) {
-		  alert("connection exists!");
+		  //alert("connection exists!");
 		  return true;
 		} else {
-		  alert("connection doesn't exist!");
+		  //alert("connection doesn't exist!");
 		  return false;
 		}
 	  }
