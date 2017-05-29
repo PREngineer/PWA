@@ -22,23 +22,22 @@ function showPage(id)
 	// Show only the selected page, hide all others
 	var target = document.getElementById(id);
 	
-	var allPages = document.getElementsByClassName('hideable');
+	var all = document.getElementsByClassName('hideable');
 	
-	for(i = 0; i < allPages.length; i++)
+	for(i = 0; i < all.length; i++)
 	{
-		allPages[i].style.display = 'none';
+		all[i].style.display = 'none';
 	}
 	
 	target.style.display = 'block';
 	
 	// Make the selected page button be blue, all others black
 	var btns = document.getElementsByClassName('buttons');
-	var btnName = id + '-button';
-	var btn = document.getElementById(btnName);
+	var btn = document.getElementById(id + '-button');
 	
-	for(j = 0; j < bnts.length; j++)
+	for(i = 0; i < all.length; i++)
 	{
-		btns[j].style.color = 'black';
+		btns[i].style.color = 'black';
 	}
 	
 	btn.style.color = 'blue';
