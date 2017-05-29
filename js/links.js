@@ -19,6 +19,7 @@ function checkconnection()
 
 function showPage(id)
 {
+	// Show only the selected page, hide all others
 	var target = document.getElementById(id);
 	
 	var all = document.getElementsByClassName('hideable');
@@ -26,9 +27,18 @@ function showPage(id)
 	for(i = 0; i < all.length; i++)
 	{
 		all[i].style.display = 'none';
-		all[i].style.color = 'black';
 	}
 	
 	target.style.display = 'block';
-	target.style.color = 'blue';
+	
+	// Make the selected page button be blue, all others black
+	var btns = document.getElementsByClassName('buttons');
+	var btn = document.getElementById(id + '-button');
+	
+	for(i = 0; i < all.length; i++)
+	{
+		btns[i].style.color = 'black';
+	}
+	
+	btn.style.color = 'blue';
 }
