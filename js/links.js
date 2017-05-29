@@ -40,7 +40,7 @@ function areWeOnline()
 {
     var request = new XMLHttpRequest();
 	
-    var file = "https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg";
+    var file = "https://www.google.com";
     var randomNum = Math.round(Math.random() * 10000);
  
     request.open('HEAD', file + "?rand=" + randomNum, true);
