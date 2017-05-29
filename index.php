@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-<!-- Include the header stuff -->
-<link rel="import" href="includes/head.html">
+<?php
 
-<!-- Execute the function upon loading the page -->
+// Insert all of the header information
+include 'includes/head.html';
+
+?>
+
 <body onload="load()">
 
-<!-- Include the HOME Page -->
-<link rel="import" href="home.html">
+<?php
 
-<!-- Include the Offline Page -->
-<link rel="import" href="offline.html">
+// Insert the home page information
+include 'home.html';
+
+?>
+
+<?php
+
+// Insert the offline page information
+include 'offline.html';
+
+?>
 
 </body>
 
