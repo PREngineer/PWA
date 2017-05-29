@@ -19,9 +19,25 @@ var filesToCache = [
   "img/Logo.png",
   "img/TLogo.png",
   "img/Offline.png",
+  "css/animation.css",
+  "css/bootstrap.css",
+  "css/bootstrap-theme.css",
+  "css/fontello.css",
   "js/sw.js",
   "js/sw-reg.js",
-  "js/links.js"
+  "js/bootstrap.js",
+  "js/jquery.min.js",
+  "js/links.js",
+  "fonts/fontello.eot",
+  "fonts/fontello.svg",
+  "fonts/fontello.ttf",
+  "fonts/fontello.woff",
+  "fonts/fontello.woff2",
+  "fonts/glyphicons-halflings-regular.eot",
+  "fonts/glyphicons-halflings-regular.svg",
+  "fonts/glyphicons-halflings-regular.ttf",
+  "fonts/glyphicons-halflings-regular.woff",
+  "fonts/glyphicons-halflings-regular.woff2"
 ];
 
 /* Install stage 
