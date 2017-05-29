@@ -1,9 +1,9 @@
 function goIndex()
 {
-    location.href = "index.php";
+    location.href = "#home";
 }
 
 function goOffline()
 {
-    location.href = "offline.html";
+    location.href = "#offline";
 }
