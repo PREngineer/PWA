@@ -52,7 +52,7 @@ function areWeOnline()
 	{
       if(request.readyState == 4)
 	  {
-        if(request.status >= 200 && request.status < 304)
+        if(request.status >= 200)
 		{
           var answer = true;
 		  alert("We have Internet access!");
