@@ -35,7 +35,7 @@ function showPage(id)
 	var btns = document.getElementsByClassName('buttons');
 	var btn = document.getElementById(id + '-button');
 	
-	for(i = 0; i < all.length; i++)
+	for(i = 0; i < bnts.length; i++)
 	{
 		btns[i].style.color = 'black';
 	}
