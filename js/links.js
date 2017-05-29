@@ -1,41 +1,13 @@
-function goHome()
-{
-	var hide = document.getElementById("offline");
-	hide.style.display = 'none';
-	
-	var show = document.getElementById("home");
-	show.style.display = 'block';
-}
-
-function goOffline()
-{
-	var hide = document.getElementById("home");
-	hide.style.display = 'none';
-	
-	var show = document.getElementById("offline");
-	show.style.display = 'block';
-}
-
 function load()
 {
-	alert(areWeOnline());
-	
-	if( answer )
+	if( areWeOnline() )
 	{
-		goOnline();
+		goHome();
 	}
 	else
 	{
 		goOffline();
 	}
-}
-
-function getAnchor()
-{
-	var currentUrl = document.URL,
-	urlParts   = currentUrl.split('#');
-
-	return (urlParts.length > 1) ? urlParts[1] : null;
 }
 
 function areWeOnline()
@@ -54,7 +26,7 @@ function areWeOnline()
 	{
       if(request.readyState == 4)
 	  {
-        if(request.status >= 200)
+        if(request.status >= 200 && request.status < 304)
 		{
           var answer = true;
 		  alert("We have Internet access!");
@@ -75,4 +47,30 @@ function areWeOnline()
 	{
 		return false;
 	}
+}
+
+function goHome()
+{
+	var hide = document.getElementById("offline");
+	hide.style.display = 'none';
+	
+	var show = document.getElementById("home");
+	show.style.display = 'block';
+}
+
+function goOffline()
+{
+	var hide = document.getElementById("home");
+	hide.style.display = 'none';
+	
+	var show = document.getElementById("offline");
+	show.style.display = 'block';
+}
+
+function getAnchor()
+{
+	var currentUrl = document.URL,
+	urlParts   = currentUrl.split('#');
+
+	return (urlParts.length > 1) ? urlParts[1] : null;
 }
