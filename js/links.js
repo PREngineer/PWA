@@ -2,11 +2,7 @@ var answer = false;
 
 function load()
 {
-	areWeOnline();
-	
-	alert(answer);
-	
-	if( answer )
+	if( areWeOnline() )
 	{
 		goHome();
 	}
@@ -20,10 +16,9 @@ function areWeOnline()
 {
     var request = new XMLHttpRequest();
 	
-    var file = "https://www.google.com";
-    var randomNum = Math.round(Math.random() * 10000);
- 
-    request.open('HEAD', file + "?rand=" + randomNum, true);
+    var file = "https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg";
+     
+    request.open('HEAD', file + "?rand=3000", true);
     request.send();
      
     request.addEventListener("readystatechange", processRequest, false);
@@ -43,6 +38,10 @@ function areWeOnline()
 		  alert("We don't have Internet access!");
         }
       }
+	  else
+	  {
+		alert('Weird readystatechange!');
+	  }
     }
 	
 	if(answer)
