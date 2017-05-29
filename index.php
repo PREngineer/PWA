@@ -32,6 +32,18 @@ include 'includes/footer.html';
 
 ?>
 
+<script>
+	$.ajax({
+	url: 'ajax/test.html',
+	success: function(data) {
+	alert('Connection.');
+	},
+	error: function(data) {
+	alert('No Connection.');
+	}
+	});
+</script>
+
 </body>
 
 </html>

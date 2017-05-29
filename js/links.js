@@ -3,19 +3,8 @@ function load()
 	areWeOnline();
 }
 
-function areWeOnline()
+/*function areWeOnline()
 {
-	$.ajax({
-	url: 'ajax/test.html',
-	success: function(data) {
-	alert('Connection.');
-	},
-	error: function(data) {
-	alert('No Connection.');
-	}
-	});
-}
-/*{
 	var xhr = new XMLHttpRequest();
 	var file = "https://www.google.com";
 	var randomNum = Math.round(Math.random() * 10000);
