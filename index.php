@@ -8,7 +8,7 @@ include 'includes/head.html';
 
 ?>
 
-<body>
+<body onload="load()">
 
 <?php
 
