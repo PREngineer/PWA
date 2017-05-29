@@ -7,6 +7,9 @@ include 'includes/head.html';
 
 ?>
 
+<!-- Include the javascript page link functions -->
+<script src="js/links.js"></script>
+
 <body>
 
 	<div>
