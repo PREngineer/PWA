@@ -2,6 +2,8 @@ var answer = false;
 
 function load()
 {
+	areWeOnline();
+	
 	alert(answer);
 	
 	if( answer )
