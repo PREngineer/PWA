@@ -9,16 +9,18 @@ var cacheName = "melt-pwa";
 // Defines which files to cache locally
 var filesToCache = [
   ".",
-  "/",
-  "index.php",
   "manifest.json",
-  "offline.html",
-  "sw.js",
-  "sw-reg.js",
+  "index.php",
+  "content/offline.html",
+  "content/home.html",
   "includes/head.html",
+  "includes/footer.html",
+  "includes/NavBar.html",
   "img/Logo.png",
   "img/TLogo.png",
   "img/Offline.png",
+  "js/sw.js",
+  "js/sw-reg.js",
   "js/links.js"
 ];
 
@@ -44,7 +46,7 @@ self.addEventListener('fetch', function(event) {
     fetch(event.request).catch(function(error) {
         console.error( '[ServiceWorker] Network request Failed. Serving offline page ' + error );
         return caches.open(cacheName).then(function(cache) {
-          return cache.match('index.php#offline');
+          return cache.match('index.php');
       });
     }));
 });

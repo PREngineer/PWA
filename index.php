@@ -19,10 +19,10 @@ include 'includes/NavBar.html';
 /**** Actual Contents Starts Here ****/
 
 // Insert the offline page information
-include 'offline.html';
+include 'content/offline.html';
 
 // Insert the home page information
-include 'home.html';
+include 'content/home.html';
 
 /**** Actual Contents Ends Here ****/
 
