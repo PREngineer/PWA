@@ -1,26 +1,21 @@
-function goIndex()
+function goHome()
 {
     //location.href = "#home";
 	
-	var hide = document.getElementById("offline");
-	hide.style.display = 'none';
-	
-	var show = document.getElementById("home");
-	hide.style.display = 'block';
+	$("#offline").hide();
+	$("#home").show();
 }
 
 function goOffline()
 {
     //location.href = "#offline";
 	
-	var hide = document.getElementById("home");
-	hide.style.display = 'none';
-	
-	var show = document.getElementById("offline");
-	hide.style.display = 'block';
+	$("#home").hide();
+	$("#offline").show();
 }
 
 function load()
 {
 	$("#home").show();
+	$("#offline").hide();
 }
