@@ -1,6 +1,10 @@
 function load()
 {
-	if( areWeOnline() )
+	var answer = areWeOnline();
+	
+	alert(answer);
+	
+	if( answer )
 	{
 		goHome();
 	}
