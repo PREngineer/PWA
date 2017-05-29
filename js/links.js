@@ -54,12 +54,23 @@ function areWeOnline()
 	  {
         if(request.status >= 200 && request.status < 304)
 		{
-          return true;
+          var answer = true;
+		  alert("We have Internet access!");
         }
 		else
 		{
-          return false;
+          var answer = false;
+		  alert("We don't have Internet access!");
         }
       }
     }
+	
+	if(answer)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
