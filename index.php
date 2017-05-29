@@ -12,15 +12,15 @@ include 'includes/head.html';
 
 <?php
 
-// Insert the home page information
-include 'home.html';
+// Insert the offline page information
+include 'offline.html';
 
 ?>
 
 <?php
 
-// Insert the offline page information
-include 'offline.html';
+// Insert the home page information
+include 'home.html';
 
 ?>
 
