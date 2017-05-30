@@ -9,7 +9,7 @@ if (navigator.serviceWorker.controller)
 else
 {
   //Register the ServiceWorker
-  navigator.serviceWorker.register('js/sw.js', {
+  navigator.serviceWorker.register('sw.js', {
     scope: '.'
   }).then(function(reg) {
     console.log('[ServiceWorker] Service worker has been registered for scope: '+ reg.scope);

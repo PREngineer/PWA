@@ -10,8 +10,8 @@ var cacheName = "melt-pwa";
 var filesToCache = [
   ".",
   "manifest.json",
-  "js/sw.js",
-  "js/sw-reg.js",
+  "sw.js",
+  "sw-reg.js",
   "index.php",
   "content/home.html",
   "content/offline.html",
