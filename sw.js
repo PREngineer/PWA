@@ -15,8 +15,8 @@ var filesToCache = [
   "sw.js",
   "sw-reg.js",
   "index.php",
+  "offline.html",
   "content/home.html",
-  "content/offline.html",
   "css/animation.css",
   "css/bootstrap.css",
   "css/bootstrap-theme.css",
@@ -49,7 +49,7 @@ var filesToCache = [
 */
 self.addEventListener('install', function(event)
 {
-  var offlinePage = new Request('content/offline.html');
+  var offlinePage = new Request('offline.html');
   event.waitUntil(
   fetch(offlinePage).then(function(response) {
     return caches.open(cacheName).then(function(cache) {
@@ -69,7 +69,7 @@ self.addEventListener('fetch', function(event)
     fetch(event.request).catch(function(error) {
         console.error( '[ServiceWorker] Network request Failed. Serving offline page. ' + error );
         return caches.open(cacheName).then(function(cache) {
-          return cache.match('content/offline.html');
+          return cache.match('offline.html');
       });
     }));
 });
