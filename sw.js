@@ -1,10 +1,12 @@
-//**** This is the "Offline page" service worker ****//
+/*************************************************
+	This is the "Offline page" service worker
+*************************************************/
 
 // Name of Data Cache
-var dataCacheName = "melt-pwa-data";
+var dataCacheName = "pwa-data";
 
 // Name of the Cache
-var cacheName = "melt-pwa";
+var cacheName = "pwa";
 
 // Defines which files to cache locally
 var filesToCache = [
@@ -40,11 +42,13 @@ var filesToCache = [
   "js/links.js"
 ];
 
-/* Install stage 
+/* 
+	Install stage 
 	- Opens the cache or creates it if it doesn't exist
 	- Sets up the offline page in the cache
 */
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function(event)
+{
   var offlinePage = new Request('content/offline.html');
   event.waitUntil(
   fetch(offlinePage).then(function(response) {
@@ -55,9 +59,12 @@ self.addEventListener('install', function(event) {
   }));
 });
 
-//If any fetch fails, it will show the offline page.
-//Maybe this should be limited to HTML documents?
-self.addEventListener('fetch', function(event) {
+/* 
+	If any fetch fails, it will show the offline page.
+	Maybe this should be limited to HTML documents? 
+*/
+self.addEventListener('fetch', function(event)
+{
   event.respondWith(
     fetch(event.request).catch(function(error) {
         console.error( '[ServiceWorker] Network request Failed. Serving offline page. ' + error );
@@ -67,8 +74,11 @@ self.addEventListener('fetch', function(event) {
     }));
 });
 
-//This is a event that can be fired from your page to tell the SW to update the offline page
-self.addEventListener('refreshOffline', function(response) {
+/*
+	This is an event that can be fired from your page to tell the SW to update the offline page
+*/
+self.addEventListener('refreshOffline', function(response)
+{
   return caches.open(cacheName).then(function(cache) {
     console.log('[ServiceWorker] Offline page updated from refreshOffline event: '+ response.url);
     return cache.put(offlinePage, response);

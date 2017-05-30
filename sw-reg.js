@@ -1,7 +1,12 @@
-// This is the "Offline page" service worker
+/*************************************************
+	This is the "Offline page" service worker
+*************************************************/
 
-// Add this below content to your HTML page, 
-// or add the js file to your page at the very top to register service worker
+/* 
+	Add this content to your HTML page; 
+	or add the js file to your page, at the very top, 
+	to register the service worker
+*/
 if (navigator.serviceWorker.controller)
 {
   console.log('[ServiceWorker] Active service worker found, no need to register.')
