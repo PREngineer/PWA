@@ -19,6 +19,9 @@ include 'includes/NavBar.html';
 /**** Actual Contents Starts Here ****/
 
 // Insert the home page information
+include 'content/blank.html';
+
+// Insert the home page information
 include 'content/home.html';
 
 // Insert the offline page information
