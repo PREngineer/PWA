@@ -49,7 +49,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
   fetch(offlinePage).then(function(response) {
     return caches.open(cacheName).then(function(cache) {
-      console.log('[ServiceWorker] Cached offline page during Install '+ response.url);
+      console.log('[ServiceWorker] Cached offline page during Install. '+ response.url);
       return cache.put(offlinePage, response);
     });
   }));
@@ -60,7 +60,7 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).catch(function(error) {
-        console.error( '[ServiceWorker] Network request Failed. Serving offline page ' + error );
+        console.error( '[ServiceWorker] Network request Failed. Serving offline page. ' + error );
         return caches.open(cacheName).then(function(cache) {
           return cache.match('content/offline.html');
       });
