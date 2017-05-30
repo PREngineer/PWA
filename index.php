@@ -31,6 +31,9 @@ include 'content/home.html';
 // Insert the logout page
 include 'content/logout.html';
 
+// Insert the logout page
+include 'content/info.html';
+
 /************************* Actual Contents Ends Here *************************/
 
 
