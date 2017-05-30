@@ -11,10 +11,10 @@ function checkconnection()
 	{
 		showPage('home');
 	}
-	else
-	{
-		showPage('offline');
-	}
+//	else
+//	{
+//		showPage('logout');
+//	}
 }
 
 function showPage(id)

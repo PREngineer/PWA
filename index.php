@@ -18,11 +18,11 @@ include 'includes/NavBar.html';
 
 /**** Actual Contents Starts Here ****/
 
-// Insert the offline page information
-include 'content/offline.html';
-
 // Insert the home page information
 include 'content/home.html';
+
+// Insert the offline page information
+include 'content/logout.html';
 
 /**** Actual Contents Ends Here ****/
 
