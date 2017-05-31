@@ -6758,9 +6758,18 @@ button.close {
 /* Custom Entries by Jorge Pabon from now on
 -------------------------------------------------- */
 
-.nav-link { 
+.nav-link {
   cursor: pointer;
-  cursor: hand; 
+  cursor: hand;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
 }
 
 /* Sticky footer styles
