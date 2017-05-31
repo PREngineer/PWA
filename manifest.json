@@ -4,7 +4,7 @@
   "name": "My App",
   "scope": ".",
   "display": "standalone",
-  "start_url": "https://pwa.eastus.cloudapp.azure.com/PWA/",
+  "start_url": ".",
   "short_name": "My App",
   "theme_color": "#2196F3",
   "description": "A Progressive Web Application",
