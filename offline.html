@@ -5,16 +5,16 @@
 
 	<!-- App Title/Name -->
 	<title>My App</title>
-	
+
 														<!-- PROGRESSIVE WEB APP INFORMATION -->
-	
-	<!-- PWA Manifest -->	
+
+	<!-- PWA Manifest -->
 	<link rel="manifest" href="manifest.json">
-	
+
 	<!-- Service Worker Files -->
 	<script src="sw.js"></script>
 	<script src="sw-reg.js"></script>
-	
+
 	<!-- Generic App Information -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,25 +26,25 @@
 	<link rel="icon" sizes="192x192" href="img/TLogo.png">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="theme-color" content="#2196F3">
-		
+
 	<!-- For Apple Devices -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="My App">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-title" content="My App">
 	<link rel="apple-touch-icon" href="img/Logo.png">
-	
+
 	<!-- For Microsoft Devices -->
 	<meta name="msapplication-TileImage" content="img/TLogo.png">
 	<meta name="msapplication-TileColor" content="#2196F3">
-		
+
 	<!-- ... -->
 	<meta property="og:title" content="My App">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="img/TLogo.png">
 	<meta property="og:url" content="https://pwa.eastus.cloudapp.azure.com/PWA/">
 	<meta property="og:description" content="A Progressive Web App">
-	
+
 	<!-- Twitter References -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:url" content="https://pwa.eastus.cloudapp.azure.com/PWA/">
@@ -54,27 +54,27 @@
 	<meta name="twitter:creator" content=@PianistaPR>
 
 														<!-- BOOTSTRAP INFORMATION -->
-	
+
 	<!-- Bootstrap Core JavaScript -->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-	
+
 	<!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css" rel="stylesheet">
-	
+
 	<!-- Additional Glyphicons -->
 	<link href="css/animation.css" rel="stylesheet">
 	<link href="css/fontello.css" rel="stylesheet">
-		
+
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
-	
+
 </head>
 
 <!-- Include the javascript page link functions -->
@@ -83,7 +83,13 @@
 <body>
 
 <div id="offline" class="text-center hideable container">
-	<img src="img/Offline.png" alt="You are offline.">
+	<!--<img src="img/Offline.png" alt="You are offline.">-->
+
+	<h1>
+		<span style="color:red;" class="icon-wifi"></span>&nbsp;&nbsp;
+		<span style="color:red;" class="icon-signal"></span>
+	</h1>
+
 	<h3>
 		You are currently offline.<br><br>
 		Please make sure that you have internet access and try again.
@@ -98,13 +104,13 @@
   <div class="inner">
 
 	<p>&copy; <span id="year"></span>
-	
+
 	<script>
 		var d = new Date();
 		var n = d.getFullYear();
 		document.getElementById("year").innerHTML = n;
 	</script>
-	
+
 	Jorge Pabon
 	<br>
 	All Rights Reserved.</p>
