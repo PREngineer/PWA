@@ -9,6 +9,7 @@ Important considerations about progressive apps:
 
    It doesn't matter if the border looks square.  
    The phone will adjust it to look like an icon.
+   The manup.js file in the root helps to generate the icon.
 
 3. On Android, USE transparency because it will not format it as an icon.
 
